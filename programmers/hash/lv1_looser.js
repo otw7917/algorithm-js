@@ -1,29 +1,12 @@
 export default function solution(participant, completion) {
   let answer = "";
-
+  const map = new Map();
   if (!Array.isArray(participant)) return;
   if (!Array.isArray(completion)) return;
-  const obj = {};
   for (const part of participant) {
-    if (!obj[part]) {
-      obj[part] = 1;
-    } else {
-      obj[part] += 1;
-    }
+    map.set(part, 1);
   }
-
-  for (const comp of completion) {
-    if (obj[comp]) {
-      obj[comp] -= 1;
-    }
-  }
-
-  for (const part of participant) {
-    if (obj[part] >= 1) {
-      answer = part;
-    }
-  }
-  console.log(answer);
+  console.log(map);
   return answer;
 }
 
