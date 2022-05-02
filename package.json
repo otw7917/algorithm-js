@@ -5,9 +5,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "jest --watchAll"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "nodemon": "^2.0.12"
+  },
+  "dependencies": {
+    "jest": "^28.0.3"
   }
 }
