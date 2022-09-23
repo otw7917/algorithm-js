@@ -9,18 +9,17 @@ export default function makePrime(nums) {
   // 배열안에 서로 다른 3개 숫자
   // 중복숫자 제거해주기
   const numsS = [...new Set(nums)];
-  console.log(numsS);
+  let answer = 0;
   const len = numsS.length;
-  let sumArr = [];
   for (let i = 0; i < len; i++) {
     for (let j = i + 1; j < len; j++) {
       for (let k = j + 1; k < len; k++) {
-        sumArr.push(numsS[i] + numsS[j] + numsS[k]);
+        sum = numsS[i] + numsS[j] + numsS[k];
+        if (isPrime(sum)) answer++;
       }
     }
   }
-  let answer = sumArr.filter((val) => isPrime(val));
-  return answer.length;
+  return answer;
 }
 
 function isPrime(num) {
