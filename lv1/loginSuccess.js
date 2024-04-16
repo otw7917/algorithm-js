@@ -39,3 +39,14 @@ const db2 = [
 const result = "lgoin";
 const result1 = "wrong pw";
 const result2 = "fail";
+
+console.log(solution(id_pw, db) === result);
+console.log(solution(id_pw1, db1) === result1);
+console.log(solution(id_pw2, db2) === result2);
+
+// map
+function solution1(id_pw, db) {
+  const [id, pw] = id_pw;
+  const map = new Map(db);
+  return map.has(id) ? (map.get(id) === pw ? "login" : "wrong pw") : "fail";
+}
